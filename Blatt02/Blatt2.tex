@@ -6,10 +6,11 @@
 \geometry{left=25mm, right=15mm, bottom=25mm}
 \setlength{\parindent}{0em} 
 \setlength{\headheight}{0em} 
-\title{Graphentheorie\\ Blatt 1}
+\title{Graphentheorie\\ Blatt }
 \author{Markus Vieth\and Christian Stricker}
 \date{\today}
 \input{../head/lstlisting.tex}
+\input{../head/grafik.tex}
 \newcommand{\ddvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
 \newcommand{\dddvec}[3]{\begin{pmatrix}#1\\#2\\#3\end{pmatrix}}
 \newcommand{\longvec}[1]{\overset{\longrightarrow}{#1}}
@@ -28,21 +29,27 @@
 
 \newpage
 \section*{Aufgabe 1}
+\vspace*{-1.5em}
 \subsection*{a}
-$M \subseteq E$ heißt Matching, wenn jeder Knoten zu höchstens einer Kante aus $M$ inzident ist.
+Der Hopcroft-Karp-Algorithmus baut in $O(|V| + |E|)$ den Level-Graphen zu $G$ auf und sucht anschließend eine maximale Menge an $M$-augmentierenden Pfaden indem mithilfe einer Tiefensuche ein augmentierender Pfad gesucht wird und anschließend aus dem Graph entfernt wird, bevor mit der Tiefensuche ein weiterer Pfad gesucht wird. Das finden und löschen eines Pfades $P_i$ dauert $O(|P_i|)$. Sind alle augmentierenden Pfade gefunden, werden diese dem Matching $M$ hinzugefügt. Dies wird solange wiederholt, bis keine augmentierenden Pfade mehr gefunden werden.
+\vspace*{-1.5em}
 \subsection*{b}
 Nach Lemma 2.6 des Paper gilt:\\
 Es existieren mindestens $k = |M'| - |M|$ knotendisjunkte augmentierende Pfade in $G$ für $M$.\\
 Somit gilt:
 \[ M' = N~~k = |M'| - |M| = |N| - |M| \geq 1 \]
 Somit gilt, es existieren mindestens $k=|N| - |M|$ viele knotendisjunkte $M$-verbessernde Pfade.
+\vspace*{-1.5em}
 \subsection*{c}
 Ebenfalls nach Lemma 2.6 gilt:
 \[ \exists P \text{ M-augmentierender Pfad } | |P| = \ell \leq \frac{n}{k} - 1  \]
+\vspace*{-1.5em}
 \[ M' \hat{=} \text{ maximum Matching}~~|M'| = |M| + k \]
+\vspace*{-1.5em}
 Somit gilt:
 \[ \ell \leq \frac{n}{k} - 1 < \frac{n}{k} \Rightarrow k < \frac{n}{\ell} = \frac{|V|}{\ell} \Rightarrow |M'| = |M| + k < |M| + \frac{|V|}{\ell} \]
 \qed
+\vspace*{-3em}
 \section*{Aufgabe 2}
 Unter der Annahme, dass der Algorithmus erfolgreich ist, wenn er ein perfektes Matching findet, gilt:
 \[ |E| = \underset{\text{aus }(v_i,v_j) \in E ~\forall i\neq j \in \{1\ldots n\}}{\underbrace{\frac{n^2-n}{2}}} + \underset{\text{aus } (v_i,u_i) \in E ~\forall i\in\{ 1\ldots n \} }{\underbrace{n}}   = \frac{n^2+n}{2}\]
@@ -54,5 +61,15 @@ Die Wahrscheinlichkeit für $\ell$ richtige Züge in Folge ist:
 \[ P(\ell) = \prod_{i=1}^{\ell}\frac{2}{n-k+2} = \frac{2^\ell}{(n+1)!}\cdot(n-\ell)! \]
 $\Rightarrow$ Die Wahrscheinlichkeit für $n$ richtige in Folge ist demnach:
 \[ P(n) = \frac{2^n}{(n+1)!}\cdot(n-n)! = \frac{2^n}{(n+1)!} \]
-
+\section*{Aufgabe 3}
+\begin{tikzpicture}[scale=6]
+\draw (0,0) -- (1,0);
+\draw[decoration={zigzag,segment length=4,amplitude=.9,
+	post=lineto,post length=1}] (0,0) edge[decorate] (1,1);
+\draw[decoration={zigzag,segment length=4,amplitude=.9,
+	post=lineto,post length=1}] (0,1) edge[decorate] (1,0);
+\draw (0,1) -- (1,1);
+\end{tikzpicture}\\
+Wir starten bei $d=2^n$ wir wissen dass ein Eulerkreis existiert, da alle Knoten geraden Grad haben. Eulerkreis kann in $O(m)$ gefunden werden(Hinweis). Wir löschen je die Hälfte aller Kanten $\Rightarrow \frac{2^n}{2} = 2^{n-1}$ \\
+$\Rightarrow O(n\cdot m) = O(m)$
 \end{document}
