@@ -198,4 +198,18 @@ Wir speichern in der Zelle $T[i,j]$ alle erlaubten Sequenzen der Länge $i$ star
 \[ T[i,j] = \bigcup_{v_\ell | \{v_i,v_\ell\} \in E } \left\{ [v_j] + P | P \in T[i-1, \ell] \land v_j \notin P \right\} \]
 Weiter gilt, dass ein Knoten $v_i$ genau $d$ Nachbarn hat, die in der obigen Vereinigung beachtet werden und das $j$ bis $k$ läuft. Für jede Zellen müssen maximal $d$ Werte betrachtet werden. Parallel zur Vorlesung gilt somit eine Tabellengröße von $d^k \cdot n$ und eine Laufzeit von $O(k^k \cdot n)$
 \section{Aufgabe 3: FPT Independent-Set (10 P)}
+\subsection{Vorüberlegung}
+Für planare Graphen gilt nach dem Eulerschen Polyedersatz:
+\[ |V| - |E| + |F| = 2 \]
+Mit $F$ der Menge aller Oberflächen im Graphen die durch die Kanten des Graphen abgegrenzt sind. 
+Dabei stellen wir uns vor, dass der betrachtet Ausschnitt oben und unten, sowie links und rechts verbunden sind und so dass die Fläche außerhalb des Graphen ebenfalls eine Oberfläche bildet. Da unser Graph einfach ist, liegt eine Kante auf jeden Fall zwischen nicht mehr als 2 Oberflächen (\textcircled{\small 1}). Weiter wird jede Oberfläche von mindestens 3 Kanten aufgespannt (\textcircled{\small 2}). Somit gilt:
+\[ |F| \leq 2|E|\footnote{\textcircled{\tiny1}} \land 3|F| \leq |E|\footnote{\textcircled{\tiny2}} \]
+\[ \Rightarrow |F| \leq  3|F| \leq |E| \leq 2|E| \]
+\[ \Rightarrow 3|F| \leq 2|E| \]
+\[ \Rightarrow |V| - |E| + \frac{2}{3}|E| \geq 2 \]
+\[ \Leftrightarrow 3|V| - 6 \geq |E| \]
+Für den durchschnittlichen Grad eine Knoten gilt dann:
+\[ \frac{2*|E|}{|V|} \leq \frac{2(3*|V|-6)}{|V|} = 6 * \frac{|V| -2}{|V|} \leq 6 \]
+Das Löschen eines Knoten in einem planaren Graphen ergibt wieder einen planaren Graphen.\\
+So können wir immer an einem Knoten mit Grad 5 verzweigen, indem man einen der 6 Knoten zur Lösungsmenge hinzunimmt. Die Laufzeit beträgt somit $O(6^k\cdot poly(n))$.
 \end{document}
