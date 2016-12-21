@@ -1,0 +1,79 @@
+\documentclass[a4paper,11pt,twoside]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage{subcaption}
+\usepackage[utf8]{inputenc}
+\usepackage{ngerman, eucal, mathrsfs, amsfonts, bbm, amsmath, amssymb, stmaryrd,graphicx, array, geometry, color, wrapfig, float, hyperref, epstopdf,gensymb, subcaption, extarrows}
+\geometry{left=25mm, right=15mm, bottom=25mm}
+\setlength{\parindent}{0em} 
+\setlength{\headheight}{0em} 
+\title{Graphentheorie\\ Blatt 4}
+\author{Markus Vieth\and Christian Stricker}
+\date{\today}
+\input{../head/lstlisting.tex}
+\input{../head/grafik.tex}
+\newcommand{\coloredcircled}[3][black]{{\large \Large\color{#2}\textcircled {{\small\color{#1}#3}}}}% Circlecolor, Textcolor, text
+\newcommand{\ddvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\dddvec}[3]{\begin{pmatrix}#1\\#2\\#3\end{pmatrix}}
+\newcommand{\longvec}[1]{\overset{\longrightarrow}{#1}}
+\newcommand{\eunorm}[1]{\left\lVert#1\right\rVert_2}
+\newcommand{\scalar}[2]{\left<#1,#2\right>}\newcommand{\cor}[1]{\textcolor{red}{\textit{#1}}}
+\newcommand{\qed}{%
+	\begin{flushright}
+		q.e.d.
+	\end{flushright}%
+	}
+\begin{document}
+\maketitle
+\cleardoublepage
+\pagestyle{myheadings}
+\markboth{Markus Vieth, Christian Stricker}{Markus Vieth, Christian Stricker}
+
+\newpage
+\section*{Aufgabe 1}
+\subsection*{a)}
+Für $\frac{m_0}{n_0}<6$ \\
+Nach einmal Boruvka hat man $n_0\leq \frac{n}{2}\Leftrightarrow n \geq2n_0 $ Knoten und $m_0 \leq m- \frac{n}{2} $ Kanten \\
+Zusammengefasst $m_0 \leq m- \frac{2n_0}{2} \Leftrightarrow m_0 \leq m-n_0 $ \\
+
+Für $\frac{m_0}{n_0} <6 \Leftrightarrow n_0 >\frac{m_0}{6}$\\
+\begin{align*}
+\Rightarrow m_0&\leq m-\frac{m_0}{6} ~ |\cdot 6\\
+\Rightarrow 6\cdot m_0&\leq 6\cdot m-m_0 ~ |m_0\\
+\Rightarrow 7\cdot m_0&\leq 6\cdot m ~ | \div 7\\
+\Leftrightarrow&\underline{\underline{m_0\leq \frac{6m}{7}}}
+\end{align*}
+Für $\frac{m_0}{n_0} \geq6 \Leftrightarrow n_0 \leq \frac{m_0}{6} $ \\
+\[ m > \frac{m_0}\geq 6n_0 > 6\]
+Da wir alle isolierten Knoten löschen gilt, das es mindestens eine Kante im Graph gibt, mit welcher im Boruvka-Schritt der Graph kontrahiert werden konnte. Da im Boruvka Schritt alle selbstverweisenden Knoten entfernt werden folgt
+\[ X \leq m-1 \]
+$\mathbb{E}[X] \leq \frac{m-1}{2}$ gilt, da jede Kante die Wahrscheinlichkeit 0,5 bekommt $\Rightarrow$ Erwartungswert X Kante zu erhalten ist Anzahl der Kanten($\leq m-1$) mal die Wahrscheinlichkeit (0,5).
+\[ \Rightarrow E(X) = E(T(\frac{n}{2}, |\mathbb{X}|)) = c'\cdot\mathbb{X} \leq c'\cdot\frac{m-1}{2} \]
+
+
+Da $X$ die gewählten Kanten sind, auf denen die $T$-leichten Kanten gesucht werden gilt:
+\[ Y\leq X\leq m-1\]
+In der Vorlesung gezeigt gilt:
+\[ \mathbb{E}[Y] \leq 2(n_0 -1) \]
+\[ m > m_0\geq 6n_0\]
+\[\Rightarrow \frac{m}{6} \geq \frac{m_0}{6}\geq n_0\]
+\[\Rightarrow \mathbb{E}[Y] \leq  2\left( \frac{m}{6} -1\right) \leq \frac{m}{3}  \]
+\[ E(Y) = c'\cdot\mathbb{Y} \leq c'\cdot\frac{m}{3} \]
+Gesamtlaufzeit:
+\[ E(m) = E(E(X+Y)) \xlongequal{\!\text{liniarität}\!} E(X)+E(Y) \leq c'\cdot\frac{m-1}{2} + c'\frac{m}{3} = c'\left( \frac{3m - 3 + 2m}{6} \right) \leq c'\cdot m \leq 7cm  \]
+
+
+\subsection*{b)}
+Am Anfang gibt es m Kante. Der Karger Algorithmus nimmt zufällig eine Kante (u,v) und verschmilzt die dazugehörigen Knoten u und v zu einem Knoten w und alle Kanten von (u,x) und (v,x) außer (u,v) werden zu (w,x), d.h. es werden bei jedem Aufruf nicht mehr Kanten sondern immer weniger, mindestens eine, die zufällig gewählt wurden, und die Kanten (u,v). \\
+X: Anzahl der Kanten im gesampelten Graphen.\\
+Y: Anzahl der Kanten, nachdem die F-schweren gelöscht wurden. \\
+z.Z. $X+Y \leq m_0+n_0-1 < m$\\
+Oben gezeigt: $m_0+n_0 \leq m$, da $m_0+n_0$ höchstens m ist, folgt: $ m_0+n_0 -1<m$  \\
+Y ist die Anzahl aller Kanten, die nicht F-schwer sind, das sind genau die Kanten im minimalen Spannbaum und das sind höchstens $n_0-1$ viele.\\ 
+X ist die Anzahl Kanten im gesampelten Graphen und das sind nach dem Boruvka höchstens $m_0$ viele\\
+$\Rightarrow X+Y \leq m_0 + n_0 -1 <m$  \qed
+
+
+\subsection*{c)}
+Aus b) folgt, dass die Anzahl aller Kanten in der Rekursion maximal $m$ ist. Betrachten wir den Rekursionsbaum, so entsteht aus einem Problem höchstens 2 Teilprobleme, da wir keine isolierten Knoten betrachten und somit gilt $m \geq \frac{n}{2}$. Dabei bezeichnen wir als linke Kinder, jene Probleme, die durch das Lösen durch die mit $X$ gewählten Kanten entstehen und als rechtes Kind jene mit $Y$. Dieser Baum hat als Binärerbaum auf Level höchstens $i$ $2^i$ Knoten. Die Graphen auf Level $i$ haben höchstens $\frac{n}{2^i}$ Knoten (folgt aus Boruvka). Somit ergibt ich eine tiefste Tiefe von $\log_2 n$, da wir bei einem Knoten den Algorithmus beenden.\\
+Somit folgt, dass im schlimmsten Fall der maximale Tiefe erreicht wird, somit folgt eine Laufzeit von $T(n,m) =  c\cdot m \cdot \log_2 n \in  O \left(m\log n \right)$
+\end{document}
