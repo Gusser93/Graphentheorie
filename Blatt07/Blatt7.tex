@@ -121,32 +121,33 @@ Knoten[] findVertexCover($G=(V,E)$) {
 			}
 		}
 	}
-	class Knoten {
-		// Liste benachtbarter Knoten
-		Knoten[] nachbarn;
-		
-		int grad() { // $O(1)$
-			return nachbarn.size();
-		}
-		
-		// return nächst besten Nachbarn ungleich prev
-		Knoten next(Knoten prev) { // $O(1)$
-			if(prev != NULL && prev == nachbarn[0])
-				return nachbarn[1];
-			return nachbarn[0]
-		}
-		
-		// wenn prev = null, hat dieser Knoten einen Nachbarn? sonst: Hat dieser Knoten einen Nachbarn ungleich prev?
-		boolean hasNext(Knoten prev) { // $O(1)$
-			if(prev == NULL)
-				return this.grad > 0;
-			boolean res = false;
-			for(Knoten v in this.nachbarn)
-				res |= (v == prev);
-			return res;
-		}
-	}
 	return res;
+}
+
+class Knoten {
+	// Liste benachtbarter Knoten
+	Knoten[] nachbarn;
+
+	int grad() { // $O(1)$
+		return nachbarn.size();
+	}
+
+	// return nächst besten Nachbarn ungleich prev
+	Knoten next(Knoten prev) { // $O(1)$
+		if(prev != NULL && prev == nachbarn[0])
+			return nachbarn[1];
+		return nachbarn[0];
+	}
+
+	// wenn prev = null, hat dieser Knoten einen Nachbarn? sonst: Hat dieser Knoten einen Nachbarn ungleich prev?
+	boolean hasNext(Knoten prev) { // $O(1)$
+	if(prev == NULL)
+		return this.grad > 0;
+	boolean res = false;
+	for(Knoten v in this.nachbarn)
+		res |= (v == prev);
+		return res;
+	}
 }
 \end{lstlisting}
 $\Rightarrow$ Laufzeit in $O(n) * O(n) + O(n) * O(n) = O(n^2)$ und somit in polynomialer Zeit
@@ -170,6 +171,24 @@ Knoten[] findKPath(G,k) {
 	else 
 	{
 		// siehe Text
+	}
+}
+
+class Knoten {
+	// Liste benachtbarter Knoten
+	Knoten[] nachbarn;
+	boolean marked = false;
+	
+	void setMarked(boolean marked) {
+		this.merked = marked;
+	}
+
+	// return nächst besten Nachbarn ungleich prev
+	Knoten nextUnmarked() { // $O(d)$
+		for(Knoten v in nachbarn)
+			if(!v.marked)
+				return v;
+		return NULL;
 	}
 }
 \end{lstlisting}
