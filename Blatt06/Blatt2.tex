@@ -102,4 +102,28 @@ Seien $C_1,\ldots,C_k$ Min-Cuts in $G$. Sei $D_i$ das Event, dass der Algorithmu
 mit der Rechnung von oben gilt:
 \[ \Rightarrow P(D_i) = P(n) \Rightarrow \sum_{i=1}^{k} \frac{2}{n(n-1)} \leq 1 \Rightarrow k = \frac{n(n-1)}{2} \]
 \qed
+\pagebreak
+\part{Korrektur}
+\section{2}
+\emph{Multigraph}
+\[ deg(u) =: d(u) \]
+\[ d(u,v) = \text{Anzahl der Kanten zwischen u und v} \]
+\[ E(U,V) = \text{alle Kanten die U und V verbinden} \]
+\[ n(n-1)k \leq \sum_{u\neq v} d(u)+d(v) + d(u,v)\]
+\[ = (2(n-1)\underset{2n}{\underbrace{\sum_{u} d(u)}}) - 2m \]
+\[ = (2n -2)2m - 2m \]
+\[ = (4n - 6)m \]
+\[ \Rightarrow m \geq \frac{n(n-1)}{kn-6}k \]
+\[ P(E) \geq 1 - \frac{4n - 6}{n(n-1)} \geq 1 -\frac{4}{n} = \frac{n - 4}{n} \]
+\[ \text{Allg} P(E_i | \bigcap_{i > j} E_j) \geq 1 - \frac{4}{n-i+1} = \frac{n - i - 3}{n - i + 1} \]
+\[ P(\text{Erfolgreich}) = P(\bigcap_{i=1}^{n-3} (E_i | \bigcap_{j<i}E_j)) \]
+\[ =\prod_{i=1}^{n-3}P(E_i|\bigcap_{j>i}E_j) \]
+\[ \geq \prod \frac{n - i - 3}{n - i + 1} \]
+\[ = \Omega(n^{-4}) \]
+\section{3}
+\[ P[\text{falsch}] \leq \left( 1 - \frac{2}{n^2} \right)^x \]
+\[ P[\text{treffer}] \leq 1 - P[falsch] \geq 1 - (1 - \frac{2}{n^2})^2 \geq \frac{4n^2 - 4}{n^4}  \]
+\[ 2(n-2) = 2n - 4 \]
+\section{4}
+Ereignisse sind disjunkt nicht unabhängig.
 \end{document}
