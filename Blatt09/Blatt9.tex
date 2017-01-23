@@ -34,7 +34,6 @@
 \section{Aufgabe 2: Cops and Robber (10 Punkte)}
 \section{Aufgabe 3: Baumzerlegung berechnen (20 Punkte)}
 \subsection{a}
-\begin{animateinline}{2}
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{.33\textwidth}
@@ -55,11 +54,11 @@
 	\begin{subfigure}{.66\textwidth}
 		\centering
 		\begin{tikzpicture}[scale=2, every node/.style={draw,circle, align=center, inner sep = .5em}]
-		\node[rectangle] at (-2,2.5)   {$U = \emptyset$};
-		\node[rectangle] at (-2,2)   {$C = \{a,b,c,d,e,f,g\}$};
-		\node[rectangle] at (-2,1.5) {$X = \emptyset$};
-		\node[rectangle] at (-2,1.0)   {$t = /$};
-		\node[rectangle] at (-2,.5)  {$C \ni n_c  = c$};
+		\node[rectangle, inner sep = .5em] at (-2,2.5)   {$U = \emptyset$};
+		\node[rectangle, inner sep = .5em] at (-2,2)   {$C = \{a,b,c,d,e,f,g\}$};
+		\node[rectangle, inner sep = .5em] at (-2,1) {$X = \emptyset$};
+		\node[rectangle, inner sep = .5em] at (-2,.5)   {$t = /$};
+		\node[rectangle, inner sep = .5em] at (-2,1.50)  {$C \ni n_c  = c$};
 		
 		\node[ellipse, label =0:$X_1$] {$c$};
 		
@@ -68,7 +67,7 @@
 		\end{subfigure}
 		\caption{Ausgangssituation}
 \end{figure}
-\newframe
+
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{.33\textwidth}
@@ -88,12 +87,12 @@
 	\end{subfigure}
 	\begin{subfigure}{.66\textwidth}
 		\centering
-		\begin{tikzpicture}[sibling distance = 10em, level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = .5em}]
-		\node[rectangle] at (-2,2.5)   {$U = \{c\}$};
-		\node[rectangle] at (-2,2)   {$C = \{a\}$};
-		\node[rectangle] at (-2,1.5) {$X = \{c\}$};
-		\node[rectangle] at (-2,1.0) {$t = 1$};
-		\node[rectangle] at (-2,.5)  {$C \ni n_c  = a$};
+		\begin{tikzpicture}[sibling distance = 10em, level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = 2}]
+		\node[rectangle, inner sep = .5em] at (-2,2.5)   {$U = \{c\}$};
+		\node[rectangle, inner sep = .5em] at (-2,2)   {$C = \{a\}$};
+		\node[rectangle, inner sep = .5em] at (-2,1) {$X = \{c\}$};
+		\node[rectangle, inner sep = .5em] at (-2,.5) {$t = 1$};
+		\node[rectangle, inner sep = .5em] at (-2,1.50)  {$C \ni n_c  = a$};
 		
 		\node[label =0:$X_1$] at (0,3){$c$}
 		child{
@@ -103,7 +102,7 @@
 		\caption{Tree decomposition $T$}
 	\end{subfigure}
 \end{figure}
-\newframe
+
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{.33\textwidth}
@@ -123,12 +122,12 @@
 	\end{subfigure}
 	\begin{subfigure}{.66\textwidth}
 		\centering
-		\begin{tikzpicture}[level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = .5em}]
-		\node[rectangle] at (-2,2.5)   {$U = \{a, c\}$};
-		\node[rectangle] at (-2,2)   {$C = \{b,d,e,f,g,h\}$};
-		\node[rectangle] at (-2,1.5) {$X = \{c\}$};
-		\node[rectangle] at (-2,1.0) {$t = 1$};
-		\node[rectangle] at (-2,.5)  {$ C \ni n_c = f$};
+		\begin{tikzpicture}[level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = 2}]
+		\node[rectangle, inner sep = .5em] at (-2,2.5)   {$U = \{a, c\}$};
+		\node[rectangle, inner sep = .5em] at (-2,2)   {$C = \{b,d,e,f,g,h\}$};
+		\node[rectangle, inner sep = .5em] at (-2,1) {$X = \{c\}$};
+		\node[rectangle, inner sep = .5em] at (-2,.5) {$t = 1$};
+		\node[rectangle, inner sep = .5em] at (-2,1.50)  {$ C \ni n_c = f$};
 		
 		\node[label =0:$X_1$] at (0,3){$c$}
 		child{
@@ -141,7 +140,7 @@
 		\caption{Tree decomposition $T$}
 	\end{subfigure}
 \end{figure}
-\newframe
+
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{.33\textwidth}
@@ -161,12 +160,12 @@
 	\end{subfigure}
 	\begin{subfigure}{.66\textwidth}
 		\centering
-		\begin{tikzpicture}[level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = .5em}]
-		\node[rectangle] at (-2,2.5)   {$U = \{a,c,f\}$};
-		\node[rectangle] at (-2,2)   {$C = \{g\}$};
-		\node[rectangle] at (-2,1.5) {$X = \{f\}$};
-		\node[rectangle] at (-2,1.0) {$t = 3$};
-		\node[rectangle] at (-2,.5)  {$ C \ni n_c = g$};
+		\begin{tikzpicture}[level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = 2}]
+		\node[rectangle, inner sep = .5em] at (-2,2.5)   {$U = \{a,c,f\}$};
+		\node[rectangle, inner sep = .5em] at (-2,2)   {$C = \{g\}$};
+		\node[rectangle, inner sep = .5em] at (-2,1) {$X = \{f\}$};
+		\node[rectangle, inner sep = .5em] at (-2,.5) {$t = 3$};
+		\node[rectangle, inner sep = .5em] at (-2,1.50)  {$ C \ni n_c = g$};
 		
 		
 		\node[label =0:$X_1$] at (0,3){$c$}
@@ -184,7 +183,7 @@
 		\caption{Tree decomposition $T$}
 	\end{subfigure}
 \end{figure}
-\newframe
+
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{.33\textwidth}
@@ -204,12 +203,12 @@
 	\end{subfigure}
 	\begin{subfigure}{.66\textwidth}
 		\centering
-		\begin{tikzpicture}[level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = .5em}]
-		\node[rectangle] at (-2,2.5)   {$U = \{a,c,f,g\}$};
-		\node[rectangle] at (-2,2)   {$C = \{b,d,e,h\}$};
-		\node[rectangle] at (-2,1.5) {$X = \{c, f\}$};
-		\node[rectangle] at (-2,1.0) {$t = 3$};
-		\node[rectangle] at (-2,.5)  {$ C \ni n_c = h$};
+		\begin{tikzpicture}[level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = 2}]
+		\node[rectangle, inner sep = .5em] at (-2,2.5)   {$U = \{a,c,f,g\}$};
+		\node[rectangle, inner sep = .5em] at (-2,2)   {$C = \{b,d,e,h\}$};
+		\node[rectangle, inner sep = .5em] at (-2,1) {$X = \{c, f\}$};
+		\node[rectangle, inner sep = .5em] at (-2,.5) {$t = 3$};
+		\node[rectangle, inner sep = .5em] at (-2,1.50)  {$ C \ni n_c = h$};
 		
 		
 		\node[label =0:$X_1$] at (0,3){$c$}
@@ -230,7 +229,7 @@
 		\caption{Tree decomposition $T$}
 	\end{subfigure}
 \end{figure}
-\newframe
+
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{.33\textwidth}
@@ -250,12 +249,12 @@
 	\end{subfigure}
 	\begin{subfigure}{.66\textwidth}
 		\centering
-		\begin{tikzpicture}[level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = .5em}]
-		\node[rectangle] at (-2,2.5)   {$U = \{a,c,f,g,h\}$};
-		\node[rectangle] at (-2,2)   {$C = \{b,d,e\}$};
-		\node[rectangle] at (-2,1.5) {$X = \{c, h\}$};
-		\node[rectangle] at (-2,1.0) {$t = 5$};
-		\node[rectangle] at (-2,.5)  {$ C \ni n_c = e$};
+		\begin{tikzpicture}[level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = 2}]
+		\node[rectangle, inner sep = .5em] at (-2,2.5)   {$U = \{a,c,f,g,h\}$};
+		\node[rectangle, inner sep = .5em] at (-2,2)   {$C = \{b,d,e\}$};
+		\node[rectangle, inner sep = .5em] at (-2,1) {$X = \{c, h\}$};
+		\node[rectangle, inner sep = .5em] at (-2,.5) {$t = 5$};
+		\node[rectangle, inner sep = .5em] at (-2,1.50)  {$ C \ni n_c = e$};
 		
 		
 		\node[label =0:$X_1$] at (0,3){$c$}
@@ -279,7 +278,7 @@
 		\caption{Tree decomposition $T$}
 	\end{subfigure}
 \end{figure}
-\newframe
+
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{.33\textwidth}
@@ -299,12 +298,12 @@
 	\end{subfigure}
 	\begin{subfigure}{.66\textwidth}
 		\centering
-		\begin{tikzpicture}[level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = .5em}]
-		\node[rectangle] at (-2,2.5)   {$U = \{a,c,e,f,g,h\}$};
-		\node[rectangle] at (-2,2)   {$C = \{b,d\}$};
-		\node[rectangle] at (-2,1.5) {$X = \{c, e\}$};
-		\node[rectangle] at (-2,1.0) {$t = 6$};
-		\node[rectangle] at (-2,.5)  {$ C \ni n_c = d$};
+		\begin{tikzpicture}[level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = 2}]
+		\node[rectangle, inner sep = .5em] at (-2,2.5)   {$U = \{a,c,e,f,g,h\}$};
+		\node[rectangle, inner sep = .5em] at (-2,2)   {$C = \{b,d\}$};
+		\node[rectangle, inner sep = .5em] at (-2,1) {$X = \{c, e\}$};
+		\node[rectangle, inner sep = .5em] at (-2,.5) {$t = 6$};
+		\node[rectangle, inner sep = .5em] at (-2,1.50)  {$ C \ni n_c = d$};
 		
 		
 		\node[label =0:$X_1$] at (0,3){$c$}
@@ -331,7 +330,7 @@
 		\caption{Tree decomposition $T$}
 	\end{subfigure}
 \end{figure}
-\newframe
+
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{.33\textwidth}
@@ -351,12 +350,12 @@
 	\end{subfigure}
 	\begin{subfigure}{.66\textwidth}
 		\centering
-		\begin{tikzpicture}[level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = .5em}]
-		\node[rectangle] at (-2,2.5)   {$U = \{a,c,d,e,f,g,h\}$};
-		\node[rectangle] at (-2,2)   {$C = \{b\}$};
-		\node[rectangle] at (-2,1.5) {$X = \{d\}$};
-		\node[rectangle] at (-2,1.0) {$t = 7$};
-		\node[rectangle] at (-2,.5)  {$ C \ni n_c = b$};
+		\begin{tikzpicture}[level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = 2}]
+		\node[rectangle, inner sep = .5em] at (-2,2.5)   {$U = \{a,c,d,e,f,g,h\}$};
+		\node[rectangle, inner sep = .5em] at (-2,2)   {$C = \{b\}$};
+		\node[rectangle, inner sep = .5em] at (-2,1) {$X = \{d\}$};
+		\node[rectangle, inner sep = .5em] at (-2,.5) {$t = 7$};
+		\node[rectangle, inner sep = .5em] at (-2,1.50)  {$ C \ni n_c = b$};
 		
 		
 		\node[label =0:$X_1$] at (0,2.7){$c$}
@@ -386,7 +385,18 @@
 		\caption{Tree decomposition $T$}
 	\end{subfigure}
 \end{figure}
-\end{animateinline}
+\small
+\begin{align*}
+\begin{array}{l|ccccccccc}
+\text{step}	&0			&1		&2				&3			&4				&5				&6					&7					&\text{Result}\\\hline
+U			&\emptyset	&\{c\}	&\{a,c\}		&\{a,c,f\}	&\{a,c,f,g\}	&\{a,c,f,g,h\}	&\{a,c,e,f,g,h\}	&\tiny\{a,c,d,e,f,g,h\}	&	V\\
+C			&V			&\{a\}	&\{b,d,e,f,g,h\}&\{g\}		&\{b,d,e,h\}	&\{b,d,e\}		&\{b,d\}			&\{b\}				&\emptyset\\
+C\ni n_C	&c			&a		&f				&g			&h				&e				&d					&b					&/\\
+X			&\emptyset	&\{c\}	&\{c\}			&\{f\}		&\{c,f\}		&\{c,h\}		&\{c,e\}			&\{d\}				&\emptyset\\
+t			&/			&1		&1				&3			&3				&5				&6					&7					&/
+\end{array}
+\end{align*}
+\normalsize
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{.45\textwidth}
@@ -406,7 +416,7 @@
 	\end{subfigure}
 	\begin{subfigure}{.45\textwidth}
 		\centering
-		\begin{tikzpicture}[level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = .5em}]
+		\begin{tikzpicture}[level distance = 1.5em, scale=2, every node/.style={draw, ellipse, align=center, inner sep = 2}]
 		\node[label =0:$X_1$] {$c$}
 		child{
 			node[label=0:$X_2$] {$a,c$}	
@@ -435,5 +445,215 @@
 	\end{subfigure}
 	\caption{Result}
 \end{figure}
+\pagebreak
+\subsection{b}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\begin{tikzpicture}[scale=2, every node/.style={draw=blue, circle, align=center}]
+		\node at (0,3) (1) {1};
+		\node at (3,3) (2) {2};
+		\node at (3,0) (3) {3};
+		\node at (0,0) (4) {4};
+		\node[draw=red] at (1,2) (5) {5};
+		\node[draw=red] at (2,2) (6) {6};
+		\node[draw=red] at (1,1) (7) {7};
+		\node[draw=red] at (2,1) (8) {8};
+		\node[draw=red] at (1,0) (9) {9};
+		\node[draw=red] at (2,0) (10) {10};
+		\draw (1) -- (2) -- (3) -- (10) -- (9) -- (7) -- (8) -- (6) -- (5) -- (1) (6)--(2) (10)--(8) -- (3) (9) -- (4) -- (7);
+		\draw (3) .. controls ($(3)!.25!(4)+(0,-.5)$) and ($(3)!.75!(4)+(0,-.5)$)  .. (4);
+		\end{tikzpicture}
+		\caption{$U=X=\{5,6,7,8,9,10\}$}
+	\end{subfigure}
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\begin{tikzpicture}[scale=2, every node/.style={draw, rounded rectangle, align=center}]
+		\node[label=90:$X_1$]  at (0,1) (1) {5};
+		\node[label=90:$X_2$]  at (1,1) (2) {5,6};
+		\node[label=90:$X_3$]  at (2,1) (3) {5,6,7};
+		\node[label=-90:$X_4$] at (2,0) (4) {5,6,7,8};
+		\node[label=-90:$X_5$] at (1,0) (5) {5,6,7,8,9};
+		\node[label=180:$X_6$] at (-.5,0) (6) {5,6,7,8,9,10};
+		\draw (1) -- (2) -- (3) -- (4) -- (5) -- (6);
+		\end{tikzpicture}
+		\caption{$C=\{1,2,3,4\}$}
+	\end{subfigure}
+\end{figure}
+$X = \{ 5,6,7,8,9,10 \}$ ist nicht $w+1=3$ verbunden, da $Y=\{7,9,10\}$ und $Z=\{5,6,8\}$ durch $S=\{8,3\}$ separierbar ist. Weiter gilt:
+\begin{align*}
+\begin{array}{ccccccc}
+|S|& < &|Y|&=&|Z| &\leq &w + 1\\
+2& < &3&=&3 &\leq &3
+\end{array}
+\end{align*} 
+$S' = S\cap (Y\cup Z \cup C) = \{ 3,8 \}$ und somit $X_7 = X \cup S' = \{3,5,6,7,8,9,10\}$
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\begin{tikzpicture}[scale=2, every node/.style={draw=blue, circle, align=center}]
+		\node at (0,3) (1) {1};
+		\node at (3,3) (2) {2};
+		\node[draw=red] at (3,0) (3) {3};
+		\node at (0,0) (4) {4};
+		\node[draw=red] at (1,2) (5) {5};
+		\node[draw=red] at (2,2) (6) {6};
+		\node[draw=red] at (1,1) (7) {7};
+		\node[draw=red] at (2,1) (8) {8};
+		\node[draw=red] at (1,0) (9) {9};
+		\node[draw=red] at (2,0) (10) {10};
+		\draw (1) -- (2) -- (3) -- (10) -- (9) -- (7) -- (8) -- (6) -- (5) -- (1) (6)--(2) (10)--(8) -- (3) (9) -- (4) -- (7);
+		\draw (3) .. controls ($(3)!.25!(4)+(0,-.5)$) and ($(3)!.75!(4)+(0,-.5)$)  .. (4);
+		\end{tikzpicture}
+
+	\end{subfigure}
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\begin{tikzpicture}[scale=2, every node/.style={draw, rounded rectangle, align=center}]
+		\node[label=90:$X_1$]  at (0,1) (1) {5};
+		\node[label=90:$X_2$]  at (1,1) (2) {5,6};
+		\node[label=90:$X_3$]  at (2,1) (3) {5,6,7};
+		\node[label=-90:$X_4$] at (2,0) (4) {5,6,7,8};
+		\node[label=-90:$X_5$] at (1,0) (5) {5,6,7,8,9};
+		\node[label=180:$X_6$] at (-.5,0) (6) {5,6,7,8,9,10};
+		\node[label=180:$X_7$] at (-.5,-1) (7) {3,5,6,7,8,9,10};
+		\draw (1) -- (2) -- (3) -- (4) -- (5) -- (6) -- (7);
+		\end{tikzpicture}
+
+	\end{subfigure}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\begin{tikzpicture}[scale=2, every node/.style={draw=blue, circle, align=center}]
+		\node at (0,3) (1) {1};
+		\node at (3,3) (2) {2};
+		\node[draw=red] at (3,0) (3) {3};
+		\node[draw=red] at (0,0) (4) {4};
+		\node[draw=red] at (1,2) (5) {5};
+		\node[draw=red] at (2,2) (6) {6};
+		\node[draw=red] at (1,1) (7) {7};
+		\node[draw=red] at (2,1) (8) {8};
+		\node[draw=red] at (1,0) (9) {9};
+		\node[draw=red] at (2,0) (10) {10};
+		\draw (1) -- (2) -- (3) -- (10) -- (9) -- (7) -- (8) -- (6) -- (5) -- (1) (6)--(2) (10)--(8) -- (3) (9) -- (4) -- (7);
+		\draw (3) .. controls ($(3)!.25!(4)+(0,-.5)$) and ($(3)!.75!(4)+(0,-.5)$)  .. (4);
+		\end{tikzpicture}
+		\caption{$U=\{3,5,6,7,8,9,10\},~X=\{3,7,9\}$}
+	\end{subfigure}
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\begin{tikzpicture}[scale=2, every node/.style={draw, rounded rectangle, align=center}]
+		\node[label=90:$X_1$]  at (0,1) (1) {5};
+		\node[label=90:$X_2$]  at (1,1) (2) {5,6};
+		\node[label=90:$X_3$]  at (2,1) (3) {5,6,7};
+		\node[label=-90:$X_4$] at (2,0) (4) {5,6,7,8};
+		\node[label=-90:$X_5$] at (1,0) (5) {5,6,7,8,9};
+		\node[label=180:$X_6$] at (-.5,0) (6) {5,6,7,8,9,10};
+		\node[label=180:$X_7$] at (-.5,-1) (7) {3,5,6,7,8,9,10};
+		\node[label=-90:$X_8$] at (1,-1) (8) {3,4,7,9};
+		\draw (1) -- (2) -- (3) -- (4) -- (5) -- (6) -- (7) -- (8);
+		\end{tikzpicture}
+		\caption{$C=\{4\}$}
+	\end{subfigure}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\begin{tikzpicture}[scale=2, every node/.style={draw=blue, circle, align=center}]
+		\node at (0,3) (1) {1};
+		\node[draw=red] at (3,3) (2) {2};
+		\node[draw=red] at (3,0) (3) {3};
+		\node[draw=red] at (0,0) (4) {4};
+		\node[draw=red] at (1,2) (5) {5};
+		\node[draw=red] at (2,2) (6) {6};
+		\node[draw=red] at (1,1) (7) {7};
+		\node[draw=red] at (2,1) (8) {8};
+		\node[draw=red] at (1,0) (9) {9};
+		\node[draw=red] at (2,0) (10) {10};
+		\draw (1) -- (2) -- (3) -- (10) -- (9) -- (7) -- (8) -- (6) -- (5) -- (1) (6)--(2) (10)--(8) -- (3) (9) -- (4) -- (7);
+		\draw (3) .. controls ($(3)!.25!(4)+(0,-.5)$) and ($(3)!.75!(4)+(0,-.5)$)  .. (4);
+		\end{tikzpicture}
+		\caption{$U=\{3,4,5,6,7,8,9,10\},~X=\{3,5,6\}$}
+	\end{subfigure}
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\begin{tikzpicture}[scale=2, every node/.style={draw, rounded rectangle, align=center}]
+		\node[label=90:$X_1$]  at (0,1) (1) {5};
+		\node[label=90:$X_2$]  at (1,1) (2) {5,6};
+		\node[label=90:$X_3$]  at (2,1) (3) {5,6,7};
+		\node[label=-90:$X_4$] at (2,0) (4) {5,6,7,8};
+		\node[label=-90:$X_5$] at (1,0) (5) {5,6,7,8,9};
+		\node[label=180:$X_6$] at (-.5,0) (6) {5,6,7,8,9,10};
+		\node[label=180:$X_7$] at (-.5,-1) (7) {3,5,6,7,8,9,10};
+		\node[label=-90:$X_8$] at (1,-1) (8) {3,4,7,9};
+		\node[label=180:$X_9$] at (-.5,-2) (9) {2,3,5,6};
+		\draw (1) -- (2) -- (3) -- (4) -- (5) -- (6) -- (7) -- (8) (7)--(9);
+		\end{tikzpicture}
+		\caption{$C=\{1,2\}$}
+	\end{subfigure}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\begin{tikzpicture}[scale=2, every node/.style={draw=blue, circle, align=center}]
+		\node[draw=red] at (0,3) (1) {1};
+		\node[draw=red] at (3,3) (2) {2};
+		\node[draw=red] at (3,0) (3) {3};
+		\node[draw=red] at (0,0) (4) {4};
+		\node[draw=red] at (1,2) (5) {5};
+		\node[draw=red] at (2,2) (6) {6};
+		\node[draw=red] at (1,1) (7) {7};
+		\node[draw=red] at (2,1) (8) {8};
+		\node[draw=red] at (1,0) (9) {9};
+		\node[draw=red] at (2,0) (10) {10};
+		\draw (1) -- (2) -- (3) -- (10) -- (9) -- (7) -- (8) -- (6) -- (5) -- (1) (6)--(2) (10)--(8) -- (3) (9) -- (4) -- (7);
+		\draw (3) .. controls ($(3)!.25!(4)+(0,-.5)$) and ($(3)!.75!(4)+(0,-.5)$)  .. (4);
+		\end{tikzpicture}
+		\caption{$U=\{2,3,4,5,6,7,8,9,10\},~X=\{2,5\}$}
+	\end{subfigure}
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\begin{tikzpicture}[scale=2, every node/.style={draw, rounded rectangle, align=center}]
+		\node[label=90:$X_1$]  at (0,1) (1) {5};
+		\node[label=90:$X_2$]  at (1,1) (2) {5,6};
+		\node[label=90:$X_3$]  at (2,1) (3) {5,6,7};
+		\node[label=-90:$X_4$] at (2,0) (4) {5,6,7,8};
+		\node[label=-90:$X_5$] at (1,0) (5) {5,6,7,8,9};
+		\node[label=180:$X_6$] at (-.5,0) (6) {5,6,7,8,9,10};
+		\node[label=180:$X_7$] at (-.5,-1) (7) {3,5,6,7,8,9,10};
+		\node[label=-90:$X_8$] at (1,-1) (8) {3,4,7,9};
+		\node[label=180:$X_9$] at (-.5,-2) (9) {2,3,5,6};
+		\node[label=-90:$X_{10}$] at (1,-2) (10) {1,3,5,6};
+		\draw (1) -- (2) -- (3) -- (4) -- (5) -- (6) -- (7) -- (8) (7)--(9)--(10);
+		\end{tikzpicture}
+		\caption{$C=\{1\}$}
+	\end{subfigure}
+\end{figure}
+
+\small
+\begin{align*}
+\begin{array}{l|ccccccc}
+\text{step}	&\ldots	&7			&8						&9						&10\\\hline
+U			&&\{5,6,7,8,9,10\}	&\{3,5,6,7,8,9,10\}		&\{3,4,5,6,7,8,9,10\}	&\{2,3,4,5,6,7,8,9,10\}	\\
+C			&&\{1,2,3,4\}		&\{4\}					&\{1,2\}				&\{1\}		\\
+C\ni n_C	&&/					&4						&2						&1		\\
+X			&&\{5,6,7,8,9,10\}	&\{3,7,9\}				&\{3,5,6\}				&\{2,5\}		\\
+t			&&6					&7						&7						&9			\\
+Y			&&\{7,9,10\}		&/						&/						&/\\
+Z			&&\{5,6,8\}			&/						&/						&/\\
+S			&&\{3,8\}			&/						&/						&/
+\end{array}
+\end{align*}
+\normalsize
 
 \end{document}
