@@ -1,0 +1,38 @@
+\documentclass[a4paper,11pt,twoside,draft=false,open=any]{scrbook}
+\usepackage[T1]{fontenc}
+\usepackage{subcaption}
+\usepackage[utf8]{inputenc}
+\usepackage{ngerman, eucal, mathrsfs, amsfonts, bbm, amsmath, amssymb, stmaryrd,graphicx, array, geometry, color, wrapfig, float, hyperref, epstopdf,gensymb, subcaption, extarrows}
+\geometry{left=25mm, right=15mm, bottom=25mm}
+\setlength{\parindent}{0em} 
+\setlength{\headheight}{0em} 
+\title{Graphalgorithmen}
+\author{Markus Vieth}
+\date{\today}
+\input{../head/lstlisting.tex}
+\input{../head/grafik.tex}
+\newcommand{\coloredcircled}[3][black]{{\large \Large\color{#2}\textcircled {{\small\color{#1}#3}}}}% Circlecolor, Textcolor, text
+\newcommand{\ddvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\dddvec}[3]{\begin{pmatrix}#1\\#2\\#3\end{pmatrix}}
+\newcommand{\longvec}[1]{\overset{\longrightarrow}{#1}}
+\newcommand{\eunorm}[1]{\left\lVert#1\right\rVert_2}
+\newcommand{\scalar}[2]{\left<#1,#2\right>}\newcommand{\cor}[1]{\textcolor{red}{\textit{#1}}}
+\newcommand{\qed}{%
+	\begin{flushright}
+		q.e.d.
+	\end{flushright}%
+	}
+\begin{document}
+\maketitle
+\maketitle
+\cleardoublepage
+\frontmatter
+\input{in/in}
+\cleardoublepage
+\tableofcontents
+\clearpage
+
+\mainmatter
+
+\input{07}
+\end{document}

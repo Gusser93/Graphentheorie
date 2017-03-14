@@ -7,7 +7,7 @@
 \geometry{left=25mm, right=15mm, bottom=25mm}
 \setlength{\parindent}{0em} 
 \setlength{\headheight}{0em} 
-\title{Graphenalgorithmen\\ Blatt 8}
+\title{Graphenalgorithmen\\ Blatt 9}
 \author{Markus Vieth\and Christian Stricker}
 \date{\today}
 \input{../head/lstlisting.tex}
@@ -59,7 +59,6 @@
 		\node[rectangle, inner sep = .5em] at (-2,1) {$X = \emptyset$};
 		\node[rectangle, inner sep = .5em] at (-2,.5)   {$t = /$};
 		\node[rectangle, inner sep = .5em] at (-2,1.50)  {$C \ni n_c  = c$};
-		
 		\node[ellipse, label =0:$X_1$] {$c$};
 		
 		\end{tikzpicture}
@@ -633,7 +632,7 @@ $S' = S\cap (Y\cup Z \cup C) = \{ 3,8 \}$ und somit $X_7 = X \cup S' = \{3,5,6,7
 		\node[label=180:$X_7$] at (-.5,-1) (7) {3,5,6,7,8,9,10};
 		\node[label=-90:$X_8$] at (1,-1) (8) {3,4,7,9};
 		\node[label=180:$X_9$] at (-.5,-2) (9) {2,3,5,6};
-		\node[label=-90:$X_{10}$] at (1,-2) (10) {1,3,5,6};
+		\node[label=-90:$X_{10}$] at (1,-2) (10) {1,2,5};
 		\draw (1) -- (2) -- (3) -- (4) -- (5) -- (6) -- (7) -- (8) (7)--(9)--(10);
 		\end{tikzpicture}
 		\caption{$C=\{1\}$}
